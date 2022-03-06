@@ -4,11 +4,14 @@
 using namespace std;
 int main()
 {
-	//n x n matrix
+	int count=20;
+	double time=0;
 	const int n = 600;
-	int b[n][n];
+	int** b=new int*[n];
+	for(int i=0;i<n;i++)
+		b[i]=new int[n];
 	int sum[n]={0};
-	int a[n];
+	int*a =new int[n];
 	for(int i=0;i<n;i++)
     {
          a[i]=1;
@@ -19,15 +22,15 @@ int main()
 		b[i][j]=i+j;
 	}
 	struct timeval t_start,t_end;
-
+	for(int i=count;i>0;i--){
 	gettimeofday(&t_start,NULL);
-	//starttime
     for(int j=0;j<n;j++)
     {
         for(int i=0;i<n;i++)
             sum[j]+=b[i][j]*a[i];
     }
    	gettimeofday(&t_end,NULL);
-	//endtime
-    cout<<"Cost: "<<(t_end.tv_usec-t_start.tv_usec)/1000<<"ms"<<endl;
+	time+=(t_end.tv_usec-t_start.tv_usec);
+	}
+    cout<<"Cost: "<<time/(1000*count)<<"ms"<<endl;
 }

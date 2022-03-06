@@ -5,9 +5,11 @@ int main()
 {
 	//n x n matrix
 	const int n = 600;
-	int b[n][n];
+	int** b=new int*[n];
+	for(int i=0;i<n;i++)
+		b[i]=new int[n];
 	int sum[n]={0};
-	int a[n];
+	int* a=new int[n];
 	for(int i=0;i<n;i++)
     {
          a[i]=1;
