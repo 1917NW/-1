@@ -30,7 +30,7 @@ int main()
             sum[j]+=b[i][j]*a[i];
     }
    	gettimeofday(&t_end,NULL);
-	time+=(t_end.tv_usec-t_start.tv_usec);
+	time+=1000000*(t_end.tv_sec-t_start.tv_sec)+(t_end.tv_usec-t_start.tv_usec);
 	}
     cout<<"Cost: "<<time/(1000*count)<<"ms"<<endl;
 }

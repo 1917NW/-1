@@ -21,7 +21,7 @@ int main()
     sum=sum1+sum2;
 	gettimeofday(&t_end,NULL);
 	//endtime
-    cout<<"Cost: "<<(t_end.tv_usec-t_start.tv_usec)/1000<<"ms"<<endl;
+    cout<<"Cost: "<<(1000000*(t_end.tv_sec-t_start.tv_sec）+(t_end.tv_usec-t_start.tv_usec)))/1000<<"ms"<<endl;
   
     return 0;
 }
